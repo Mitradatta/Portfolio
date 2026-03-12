@@ -399,11 +399,11 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index, onClick }) =>
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-20`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-20">
                 {/* Image/Visual side */}
                 <motion.div
                     style={{ y }}
-                    className="w-full md:w-1/2 relative group cursor-pointer"
+                    className={`relative group cursor-pointer ${!isEven ? 'md:order-2' : ''}`}
                     onClick={onClick}
                 >
                     <div className="relative aspect-video rounded-2xl overflow-hidden bg-[#0d0d0d] dark:bg-[#0d0d0d] border border-zinc-800">
@@ -474,7 +474,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index, onClick }) =>
                 </motion.div>
 
                 {/* Content side */}
-                <div className="w-full md:w-1/2">
+                <div className={!isEven ? 'md:order-1' : ''}>
                     <motion.div
                         initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
