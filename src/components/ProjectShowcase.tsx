@@ -399,16 +399,16 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index, onClick }) =>
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}>
+            <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-20`}>
                 {/* Image/Visual side */}
                 <motion.div
                     style={{ y }}
-                    className="w-full lg:w-1/2 relative group cursor-pointer"
+                    className="w-full md:w-1/2 relative group cursor-pointer"
                     onClick={onClick}
                 >
-                    <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700">
+                    <div className="relative aspect-video rounded-2xl overflow-hidden bg-[#0d0d0d] dark:bg-[#0d0d0d] border border-zinc-800">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-slate-900/10 dark:from-white/5 dark:to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Project visual */}
                         <div className="absolute inset-0 flex items-center justify-center">
@@ -474,7 +474,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index, onClick }) =>
                 </motion.div>
 
                 {/* Content side */}
-                <div className="w-full lg:w-1/2">
+                <div className="w-full md:w-1/2">
                     <motion.div
                         initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
